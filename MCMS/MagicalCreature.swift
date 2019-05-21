@@ -11,9 +11,11 @@ import Foundation
 class MagicalCreature {
     
     var name: String!
+    var description: String!
     
     init (name: String){
         self.name = name
+        self.description = "This is \(name)"
     }
     
 }

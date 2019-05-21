@@ -12,12 +12,17 @@ class CreatureViewController: UIViewController {
     
     var magicalCreature: MagicalCreature!
     
+    weak var delegate: ViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = magicalCreature.name
+        descriptionLabel.textColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
+        descriptionLabel.text = magicalCreature.description
         // Do any additional setup after loading the view.
     }
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBAction func onEditPressed(_ sender: UIBarButtonItem) {
         
         print ("edit pressed")
@@ -28,7 +33,7 @@ class CreatureViewController: UIViewController {
         let editAlertAction = UIAlertAction(title: "Sumbit", style: .default){
             [unowned editAlertController] _ in
             let edit = editAlertController.textFields![0]
-            self.magicalCreature = MagicalCreature(name: edit.text!)
+            self.magicalCreature.name = edit.text
             self.title = self.magicalCreature.name
             
             
@@ -37,10 +42,6 @@ class CreatureViewController: UIViewController {
         editAlertController.addAction(editAlertAction)
         self.present(editAlertController, animated: true)
         
-        //doesn't seem to be working
-        let VC = ViewController()
-        VC.creature = magicalCreature
-        navigationController?.pushViewController(VC, animated: true)
         
     }
     

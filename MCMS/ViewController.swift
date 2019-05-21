@@ -25,6 +25,15 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.mainTableView.reloadData()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        for creature in magicalCreatureArray{
+            print(creature.name)
+        }
+        mainTableView.reloadData()
+    }
 
 
     @IBAction func addButton(_ sender: UIBarButtonItem) {
