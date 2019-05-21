@@ -28,13 +28,17 @@ class CreatureViewController: UIViewController {
         print ("edit pressed")
         
         //allow user to edit
-        let editAlertController = UIAlertController(title: "Edit Creature Name", message: nil, preferredStyle: .alert)
+        let editAlertController = UIAlertController(title: "Edit Creature Name and Description", message: "Enter a new creature name in the first line and a new description in the second line.", preferredStyle: .alert)
+        editAlertController.addTextField()
         editAlertController.addTextField()
         let editAlertAction = UIAlertAction(title: "Sumbit", style: .default){
             [unowned editAlertController] _ in
             let edit = editAlertController.textFields![0]
+            let editDesc = editAlertController.textFields![1]
             self.magicalCreature.name = edit.text
+            self.magicalCreature.description = editDesc.text
             self.title = self.magicalCreature.name
+            self.descriptionLabel.text = self.magicalCreature.description
             
             
         }

@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let creature1 = MagicalCreature(name: "Smaug")
-        let creature2 = MagicalCreature(name: "Troll Under the Bridge")
-        let creature3 = MagicalCreature(name: "Shrek")
+        let creature1 = MagicalCreature(name: "Smaug", description: "A greedy dragon that live in the lonely mountain guarding his treasure.")
+        let creature2 = MagicalCreature(name: "Troll Under the Bridge", description: "A pesky little guy who forces unwitting travelers to answer his riddles.")
+        let creature3 = MagicalCreature(name: "Shrek", description: "An ogre who once lived a peacful life. In an effort to reclaim his swamp from Lord Farquad, he inadvertantly became a hero and fell in love witha  princess.")
         magicalCreatureArray = [creature1, creature2, creature3]
         self.mainTableView.reloadData()
         
@@ -37,19 +37,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
 
     @IBAction func addButton(_ sender: UIBarButtonItem) {
-        let ac = UIAlertController(title: "Add a Creature", message: "Enter the Creature's name", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Add a Creature", message: "Enter the Creature's name in the first line and a description in the second line.", preferredStyle: .alert)
+        ac.addTextField()
         ac.addTextField()
         let submitCreatureAction = UIAlertAction(title: "Submit", style: .default) {
             [unowned ac] _ in
             let answer = ac.textFields![0]
+            let answerDesc = ac.textFields![1]
             let answerString = answer.text!
-            self.magicalCreatureArray.append(MagicalCreature(name: answerString))
+            let answerDescString = answerDesc.text!
+            self.creature = (MagicalCreature(name: answerString, description: answerDescString))
+            self.magicalCreatureArray.append(self.creature!)
             self.mainTableView.reloadData()
         }
         
         ac.addAction(submitCreatureAction)
-        
+
         self.present(ac, animated: true)
+        
         
     }
     
