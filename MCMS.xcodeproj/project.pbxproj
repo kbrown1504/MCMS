@@ -12,6 +12,7 @@
 		D54BB8DA22947D1700BDA52B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54BB8D822947D1700BDA52B /* Main.storyboard */; };
 		D54BB8DC22947D1800BDA52B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54BB8DB22947D1800BDA52B /* Assets.xcassets */; };
 		D54BB8DF22947D1800BDA52B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D54BB8DD22947D1800BDA52B /* LaunchScreen.storyboard */; };
+		D54BB8E722947E7700BDA52B /* MagicalCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54BB8E622947E7700BDA52B /* MagicalCreature.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D54BB8DB22947D1800BDA52B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D54BB8DE22947D1800BDA52B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D54BB8E022947D1800BDA52B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D54BB8E622947E7700BDA52B /* MagicalCreature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicalCreature.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				D54BB8D422947D1700BDA52B /* AppDelegate.swift */,
 				D54BB8D622947D1700BDA52B /* ViewController.swift */,
 				D54BB8D822947D1700BDA52B /* Main.storyboard */,
+				D54BB8E622947E7700BDA52B /* MagicalCreature.swift */,
 				D54BB8DB22947D1800BDA52B /* Assets.xcassets */,
 				D54BB8DD22947D1800BDA52B /* LaunchScreen.storyboard */,
 				D54BB8E022947D1800BDA52B /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				D54BB8D722947D1700BDA52B /* ViewController.swift in Sources */,
 				D54BB8D522947D1700BDA52B /* AppDelegate.swift in Sources */,
+				D54BB8E722947E7700BDA52B /* MagicalCreature.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
