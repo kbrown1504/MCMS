@@ -24,6 +24,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    @IBAction func addButton(_ sender: UIBarButtonItem) {
+        let ac = UIAlertController(title: "Add a Creature", message: "Enter the Creature's name", preferredStyle: .alert)
+        ac.addTextField()
+        let submitCreatureAction = UIAlertAction(title: "Submit", style: .default) {
+            [unowned ac] _ in
+            let answer = ac.textFields![0]
+        }
+        
+        ac.addAction(submitCreatureAction)
+        
+        present(ac, animated: true)
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return magicalCreatureArray.count
     }
