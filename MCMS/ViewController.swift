@@ -53,5 +53,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let indexPath = mainTableView.indexPathForSelectedRow!
+        let creature = magicalCreatureArray[indexPath.row]
+        let cvc = segue.destination as! CreatureViewController
+        cvc.magicalCreature = creature
+    }
+    
 }
 

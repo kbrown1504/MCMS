@@ -10,9 +10,11 @@ import UIKit
 
 class CreatureViewController: UIViewController {
 
+    var magicalCreature: MagicalCreature!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = magicalCreature.name
         // Do any additional setup after loading the view.
     }
     
