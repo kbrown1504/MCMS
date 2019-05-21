@@ -13,6 +13,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var mainTableView: UITableView!
     
     var magicalCreatureArray: [MagicalCreature] = []
+    var creature: MagicalCreature?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,8 +22,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let creature2 = MagicalCreature(name: "Troll Under the Bridge")
         let creature3 = MagicalCreature(name: "Shrek")
         magicalCreatureArray = [creature1, creature2, creature3]
+        self.mainTableView.reloadData()
         
     }
+
 
     @IBAction func addButton(_ sender: UIBarButtonItem) {
         let ac = UIAlertController(title: "Add a Creature", message: "Enter the Creature's name", preferredStyle: .alert)
@@ -37,7 +40,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         ac.addAction(submitCreatureAction)
         
-        present(ac, animated: true)
+        self.present(ac, animated: true)
         
     }
     
@@ -55,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let indexPath = mainTableView.indexPathForSelectedRow!
-        let creature = magicalCreatureArray[indexPath.row]
+        creature = magicalCreatureArray[indexPath.row]
         let cvc = segue.destination as! CreatureViewController
         cvc.magicalCreature = creature
     }
