@@ -30,6 +30,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let submitCreatureAction = UIAlertAction(title: "Submit", style: .default) {
             [unowned ac] _ in
             let answer = ac.textFields![0]
+            let answerString = answer.text!
+            self.magicalCreatureArray.append(MagicalCreature(name: answerString))
+            self.mainTableView.reloadData()
         }
         
         ac.addAction(submitCreatureAction)
