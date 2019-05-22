@@ -23,6 +23,13 @@ class CreatureViewController: UIViewController {
         descriptionLabel.text = magicalCreature.description
         creatureImageView.image = magicalCreature.image
         
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(CreatureViewController.imageTapped(gesture:)))
+        
+        // add it to the image view;
+        creatureImageView.addGestureRecognizer(tapGesture)
+        // make sure imageView can be interacted with by user
+        creatureImageView.isUserInteractionEnabled = true
+        
     }
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -53,7 +60,16 @@ class CreatureViewController: UIViewController {
         
     }
     
-    
+    //might want to make this so the user can set up the image for their creature from the photo library
+    @objc func imageTapped(gesture: UIGestureRecognizer) {
+        // if the tapped view is a UIImageView then set it to imageview
+        if (gesture.view as? UIImageView) != nil {
+            if creatureImageView.image == UIImage(named: "insertImage"){
+                print("image tapped")
+            }
+            
+        }
+    }
     
     /*
      // MARK: - Navigation
