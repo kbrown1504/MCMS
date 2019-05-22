@@ -8,16 +8,33 @@
 
 import UIKit
 
-class CreatureViewController: UIViewController {
+class CreatureViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var magicalCreature: MagicalCreature!
+    var weaponChoices = ["Regular Sword", "Flaming Sword", "Asassin Dagger"]
+    var armorChoices = ["Regular Armor", "Light Armor", "Heavy Armor"]
+    var selectedRow : Int?
     
     weak var delegate: ViewController!
     
     @IBOutlet weak var creatureImageView: UIImageView!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var weaponPickerView: UIPickerView!
+    @IBOutlet weak var armorPickerView: UIPickerView!
+    @IBOutlet weak var currentWeaponLabel: UILabel!
+    @IBOutlet weak var currentArmorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.weaponPickerView.delegate = self
+        self.weaponPickerView.dataSource = self
+        self.armorPickerView.delegate = self
+        self.armorPickerView.dataSource = self
+        
+        currentWeaponLabel.text = magicalCreature.weapon
+        currentArmorLabel.text = magicalCreature.armor
+        
         title = magicalCreature.name
         descriptionLabel.textColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         descriptionLabel.text = magicalCreature.description
@@ -32,7 +49,42 @@ class CreatureViewController: UIViewController {
         
     }
     
-    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+       return 3
+    }
+    
+    //sets data to be displayed for each row
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == weaponPickerView{
+            return weaponChoices[row]
+        } else {
+            return armorChoices[row]
+        }
+    }
+    
+    //gets what row is currently selected every time that the pickerView is moved.
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == weaponPickerView {
+            selectedRow = row
+            print(weaponChoices[row])
+            magicalCreature.weapon = weaponChoices[row]
+        } else {
+            selectedRow = row
+            print(armorChoices[row])
+            magicalCreature.armor = armorChoices[row]
+        }
+        
+        self.currentArmorLabel.text = self.magicalCreature.armor
+        self.currentWeaponLabel.text = self.magicalCreature.weapon
+    }
+
+    
+    
     @IBAction func onEditPressed(_ sender: UIBarButtonItem) {
         
         print ("edit pressed")

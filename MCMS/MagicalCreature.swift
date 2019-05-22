@@ -19,10 +19,12 @@ class MagicalCreature {
     
     //speed stat can either decide who attacks first or if the defender dodges the attack
     
-    init (name: String, description: String, image: UIImage/*, weapon: String, armor: String*/){
+    init (name: String, description: String, image: UIImage, weapon: String, armor: String){
         self.name = name
         self.description = description
         self.image = image
+        self.armor = armor
+        self.weapon = weapon
     }
     
 }

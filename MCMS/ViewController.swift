@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let creature1 = MagicalCreature(name: "Smaug", description: "A greedy dragon that live in the lonely mountain guarding his treasure.", image: UIImage(named: "Smaug")!)
-        let creature2 = MagicalCreature(name: "Troll Under the Bridge", description: "A pesky little guy who forces unwitting travelers to answer his riddles.", image: UIImage(named: "troll")!)
-        let creature3 = MagicalCreature(name: "Shrek", description: "An ogre who once lived a peacful life. In an effort to reclaim his swamp from Lord Farquad, he inadvertantly became a hero and fell in love witha  princess.", image: UIImage(named: "shrek")!)
+        let creature1 = MagicalCreature(name: "Smaug", description: "A greedy dragon that live in the lonely mountain guarding his treasure.", image: UIImage(named: "Smaug")!, weapon: "Regular Sword", armor: "Regular Armor")
+        let creature2 = MagicalCreature(name: "Troll Under the Bridge", description: "A pesky little guy who forces unwitting travelers to answer his riddles.", image: UIImage(named: "troll")!, weapon: "Regular Sword", armor: "Regular Armor")
+        let creature3 = MagicalCreature(name: "Shrek", description: "An ogre who once lived a peacful life. In an effort to reclaim his swamp from Lord Farquad, he inadvertantly became a hero and fell in love witha  princess.", image: UIImage(named: "shrek")!, weapon: "Regular Sword", armor: "Regular Armor")
         magicalCreatureArray = [creature1, creature2, creature3]
         self.mainTableView.reloadData()
         
@@ -46,7 +46,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let answerDesc = ac.textFields![1]
             let answerString = answer.text!
             let answerDescString = answerDesc.text!
-            self.creature = (MagicalCreature(name: answerString, description: answerDescString, image: UIImage (named: "insertImage")!))
+            self.creature = (MagicalCreature(name: answerString, description: answerDescString, image: UIImage (named: "insertImage")!, weapon: "Regular Sword", armor: "Regular Armor"))
             self.magicalCreatureArray.append(self.creature!)
             self.mainTableView.reloadData()
         }

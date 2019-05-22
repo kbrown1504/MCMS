@@ -111,13 +111,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cfi-bn-y9v">
+                                <rect key="frame" x="0.0" y="529" width="209" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ruT-ZQ-i7X">
+                                <rect key="frame" x="217" y="529" width="197" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Weapon:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQT-Rm-umv">
+                                <rect key="frame" x="0.0" y="529" width="209" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Armor:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avK-M4-fFX">
+                                <rect key="frame" x="217" y="529" width="197" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="R3M-en-7nz"/>
                     </view>
                     <connections>
+                        <outlet property="armorPickerView" destination="ruT-ZQ-i7X" id="Rw9-EK-wvW"/>
                         <outlet property="creatureImageView" destination="agT-Cr-1wh" id="J2t-2o-MHZ"/>
+                        <outlet property="currentArmorLabel" destination="avK-M4-fFX" id="WF7-dk-g3b"/>
+                        <outlet property="currentWeaponLabel" destination="UQT-Rm-umv" id="vRb-Sf-E3P"/>
                         <outlet property="descriptionLabel" destination="zrH-KO-g3Q" id="qRz-wr-Kqx"/>
+                        <outlet property="weaponPickerView" destination="cfi-bn-y9v" id="fwx-k2-z9I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1q-Te-MK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
