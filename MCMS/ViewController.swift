@@ -65,7 +65,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = mainTableView.dequeueReusableCell(withIdentifier: "CellID") as! UITableViewCell
         cell.textLabel?.text = magicalCreatureArray[indexPath.row].name!
-        
+        cell.detailTextLabel?.numberOfLines = 0
+        cell.detailTextLabel?.text = magicalCreatureArray[indexPath.row].description!
         return cell
         
     }
