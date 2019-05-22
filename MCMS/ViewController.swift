@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         creature = magicalCreatureArray[indexPath.row]
         let cvc = segue.destination as! CreatureViewController
         cvc.magicalCreature = creature
+        cvc.magicalCreatures = self.magicalCreatureArray
     }
     
 }

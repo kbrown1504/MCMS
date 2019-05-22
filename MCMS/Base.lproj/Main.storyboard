@@ -97,6 +97,12 @@
                                             <action selector="onEditPressed:" destination="910-Ft-yw2" id="nTn-UM-Raq"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="BATTLE W/ CREATURE" id="0vb-oi-ZgV">
+                                        <connections>
+                                            <action selector="onBattlePressed:" destination="910-Ft-yw2" id="Crj-Ti-kA9"/>
+                                            <segue destination="Njp-ay-Gou" kind="show" id="81w-T1-coG"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrH-KO-g3Q">
@@ -149,6 +155,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y1q-Te-MK7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1805.7971014492755" y="118.52678571428571"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="mUE-kb-plU">
+            <objects>
+                <viewController id="Njp-ay-Gou" customClass="BattleViewController" customModule="MCMS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HnX-SA-um7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ld6-qD-5yq">
+                                <rect key="frame" x="20" y="135" width="154" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="VS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBE-vm-xxn">
+                                <rect key="frame" x="182" y="175" width="50" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SAf-GQ-J1k">
+                                <rect key="frame" x="240" y="135" width="154" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QEL-fJ-snX">
+                                <rect key="frame" x="20" y="271" width="154" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Health :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-xq-92l">
+                                <rect key="frame" x="240" y="271" width="154" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbS-k5-lsI">
+                                <rect key="frame" x="142" y="377" width="130" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="BATTLE">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAttackPressed:" destination="Njp-ay-Gou" eventType="touchUpInside" id="axt-Cm-Kjc"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="kfu-hH-Y7U"/>
+                    </view>
+                    <connections>
+                        <outlet property="computerCreatureImageView" destination="SAf-GQ-J1k" id="esz-Re-wEt"/>
+                        <outlet property="computerHealthLabel" destination="qGj-xq-92l" id="9p2-nF-JeK"/>
+                        <outlet property="userCreatureImageView" destination="Ld6-qD-5yq" id="QmZ-GE-uCm"/>
+                        <outlet property="userHealthLabel" destination="QEL-fJ-snX" id="e1b-yR-2DA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9b-8K-PyP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586.9565217391305" y="118.52678571428571"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0OO-Hd-xjS">
