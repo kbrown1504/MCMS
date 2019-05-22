@@ -14,12 +14,15 @@ class CreatureViewController: UIViewController {
     
     weak var delegate: ViewController!
     
+    @IBOutlet weak var creatureImageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = magicalCreature.name
         descriptionLabel.textColor = #colorLiteral(red: 0.2745098174, green: 0.4862745106, blue: 0.1411764771, alpha: 1)
         descriptionLabel.text = magicalCreature.description
-        // Do any additional setup after loading the view.
+        creatureImageView.image = magicalCreature.image
+        
     }
     
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -39,6 +42,7 @@ class CreatureViewController: UIViewController {
             self.magicalCreature.description = editDesc.text
             self.title = self.magicalCreature.name
             self.descriptionLabel.text = self.magicalCreature.description
+            self.creatureImageView.image = self.magicalCreature.image
             
             
         }
