@@ -13,7 +13,7 @@ class CreatureViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     var magicalCreatures : [MagicalCreature] = []
     
     var magicalCreature: MagicalCreature!
-    var weaponChoices = ["Regular Sword", "Flaming Sword", "Asassin Dagger"]
+    var weaponChoices = ["Regular Sword", "Flaming Sword", "Assassin Dagger"]
     var armorChoices = ["Regular Armor", "Light Armor", "Heavy Armor"]
     var selectedRow : Int?
     

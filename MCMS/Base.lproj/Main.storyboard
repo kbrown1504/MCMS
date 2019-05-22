@@ -206,14 +206,31 @@
                                     <action selector="onAttackPressed:" destination="Njp-ay-Gou" eventType="touchUpInside" id="axt-Cm-Kjc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Equipment" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhB-4Z-wqE">
+                                <rect key="frame" x="8" y="303" width="178" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Equipment" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZL-bA-2e5">
+                                <rect key="frame" x="228" y="303" width="178" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kfu-hH-Y7U"/>
                     </view>
                     <connections>
+                        <outlet property="battleButton" destination="wbS-k5-lsI" id="KkB-Kb-xrP"/>
                         <outlet property="computerCreatureImageView" destination="SAf-GQ-J1k" id="esz-Re-wEt"/>
+                        <outlet property="computerCurrentEquipLabel" destination="oZL-bA-2e5" id="TC2-pa-1zP"/>
                         <outlet property="computerHealthLabel" destination="qGj-xq-92l" id="9p2-nF-JeK"/>
                         <outlet property="userCreatureImageView" destination="Ld6-qD-5yq" id="QmZ-GE-uCm"/>
+                        <outlet property="userCurrentEquipLabel" destination="VhB-4Z-wqE" id="MM8-Yd-3Rw"/>
                         <outlet property="userHealthLabel" destination="QEL-fJ-snX" id="e1b-yR-2DA"/>
                     </connections>
                 </viewController>
